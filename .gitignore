@@ -1,0 +1,12 @@
+/node_modules/
+/dist/
+/target/
+/.work/
+/evidence/local/
+/src-tauri/gen/schemas/
+*.log
+
+# Development certificate
+devcert.pfx
+*.pfx
+*.p12

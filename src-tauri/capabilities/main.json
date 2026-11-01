@@ -1,0 +1,5 @@
+{
+  "identifier": "main", "description": "Local editor commands; native selectors execute in Rust. No frontend filesystem, shell, or network permissions.",
+  "windows": ["main"],
+  "permissions": ["core:default", "core:window:allow-close", "core:window:allow-destroy", "allow-open-documents", "allow-edit-metadata", "allow-apply-template", "allow-approve-document", "allow-remove-document", "allow-list-templates", "allow-save-template", "allow-delete-template", "allow-preferences", "allow-save-preferences", "allow-export-documents", "allow-cancel-export"]
+}

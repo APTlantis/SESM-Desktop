@@ -1,0 +1,76 @@
+{
+  "roles": {
+    "background": "color_02",
+    "foreground": "color_32",
+    "primary": "color_27",
+    "secondary": "color_05",
+    "panel": "color_03",
+    "muted": "color_17",
+    "selection": "color_27",
+    "cursor": "color_05",
+    "warning": "color_18",
+    "error": "color_16",
+    "success": "color_30",
+    "info": "color_05",
+    "red": "color_16",
+    "green": "color_30",
+    "yellow": "color_27",
+    "blue": "color_05",
+    "magenta": "color_05",
+    "cyan": "color_17",
+    "black": "color_01",
+    "white": "color_32",
+    "keyword": "color_21",
+    "string": "color_05",
+    "number": "color_31",
+    "function": "color_17",
+    "type": "color_24",
+    "operator": "color_16",
+    "constant": "color_30",
+    "comment": "color_17"
+  },
+  "findings": [
+    {
+      "role": "error",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_16",
+      "hue_distance": 43.77374724978063,
+      "message": "Closest image hue used; no new hue introduced"
+    },
+    {
+      "role": "success",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_30",
+      "hue_distance": 40.89173979586957,
+      "message": "Closest image hue used; no new hue introduced"
+    },
+    {
+      "role": "red",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_16",
+      "hue_distance": 43.77374724978063,
+      "message": "Closest image hue used; no new hue introduced"
+    },
+    {
+      "role": "green",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_30",
+      "hue_distance": 40.89173979586957,
+      "message": "Closest image hue used; no new hue introduced"
+    },
+    {
+      "role": "blue",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_05",
+      "hue_distance": 38.58657534490541,
+      "message": "Closest image hue used; no new hue introduced"
+    },
+    {
+      "role": "magenta",
+      "kind": "unavailable_conventional_hue",
+      "source": "color_05",
+      "hue_distance": 98.58657534490541,
+      "message": "Closest image hue used; no new hue introduced"
+    }
+  ]
+}

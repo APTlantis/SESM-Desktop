@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "manifest": "SESM-Desktop.manifest.toml",
+  "errors": [
+    "install-upgrade: stage must pass (observed 'pending')",
+    "runtime: stage must pass (observed 'pending')"
+  ],
+  "warnings": []
+}

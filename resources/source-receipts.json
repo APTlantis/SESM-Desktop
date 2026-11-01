@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "theme_identity": "Aptlantis-Factor",
+  "physical_run": "apt-Factor",
+  "records": [
+    {
+      "source": "D:\\.city_hall\\SESM\\svg_asset.schema.json",
+      "destination": "resources/sesm-0.3.0.schema.json",
+      "purpose": "SESM candidate 0.3.0 runtime schema",
+      "sha256": "b8dc402528f0746c49621b6e2748239566da69f39f15ace00c226b22981100a2"
+    },
+    {
+      "source": "D:\\CTS\\Logos-And-Theming\\output\\apt-Factor\\palette.css",
+      "destination": "src/theme/palette.css",
+      "purpose": "Aptlantis-Factor canonical palette",
+      "sha256": "7a4949172c7da077de8071c53b4829cc24dd37289af672fca68054179c7b9066"
+    },
+    {
+      "source": "D:\\CTS\\Logos-And-Theming\\output\\apt-Factor\\semantics.json",
+      "destination": "src/theme/semantics.json",
+      "purpose": "Aptlantis-Factor semantic mappings",
+      "sha256": "5577aa2c57cdfd0d2040befa63e4e482055e95f66898bb0d58c5ea085ac5ca35"
+    },
+    {
+      "source": "D:\\CTS\\Logos-And-Theming\\output\\apt-Factor\\website\\apt-factor-website.css",
+      "destination": "src/theme/apt-factor-website.css",
+      "purpose": "Aptlantis-Factor accessible surface tokens",
+      "sha256": "191bcedde3f30b5c9232fe0f34b0556ca55f10e8396a31a15073261adad049e6"
+    },
+    {
+      "source": "A:\\doc-sites\\Logos-Themes\\public\\atlas\\examples\\apt-Factor\\svg\\apt-factor-svg-editorial-infographic.svg",
+      "destination": "tests/fixtures/atlas-infographic.svg",
+      "purpose": "Chromatic Atlas structured SVG",
+      "sha256": "f1756fdf932ce5e10ee3da83670d381e13c7ce77058e45c73bb14e0bb04cc9b3"
+    },
+    {
+      "source": "D:\\CTS\\Logos-And-Theming\\output\\apt-Factor\\data_visualization\\apt-factor-data-visualization-bars.svg",
+      "destination": "tests/fixtures/pipeline-bars.svg",
+      "purpose": "Pipeline data graphic",
+      "sha256": "b0665cea13df4d02d943e4cabec70943319da91b41851b045da4338463aa0874"
+    },
+    {
+      "source": "D:\\CTS\\Logos-And-Theming\\output\\apt-Factor\\svg\\apt-factor-svg-product-illustration.svg",
+      "destination": "tests/fixtures/pipeline-artwork.svg",
+      "purpose": "Pipeline vector artwork",
+      "sha256": "e8cfecfc612f3faf0c846be633dda26de590fe1947ce1ecc4d78977b8fced171"
+    },
+    {
+      "source": "src/theme/palette.css",
+      "destination": "tests/fixtures/factor-palette-board.svg",
+      "purpose": "Generated test fixture using the exact 32 canonical Factor colors; not a historical pipeline output",
+      "sha256": "690adf2edda7c62cd7917e73841a5e7f230c8f2b597e3473c9c7949a770b6639"
+    },
+    {
+      "source": "src-tauri/icons/32x32.png",
+      "destination": "tests/fixtures/embedded-raster.svg",
+      "purpose": "Synthetic embedded PNG fixture using the app icon generated from its own SVG mark",
+      "sha256": "bf95d0f73c735130fb1e5441fd96479d47f597f50ae7cc955bc88c483715b269"
+    }
+  ]
+}

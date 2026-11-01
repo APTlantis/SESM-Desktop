@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "application_version": "0.1.0",
+  "recorded_at": "2026-11-01T00:03:09.467Z",
+  "artifacts": [
+    {
+      "path": "target/release/bundle/msix/SESM-Desktop-0.1.0-development-msix-20261031-200308.msix",
+      "name": "SESM-Desktop-0.1.0-development-msix-20261031-200308.msix",
+      "bytes": 6771673,
+      "sha256": "db73164636141e8a222cb5336951b3a275d81bfe125fe0d1a8522fd0742afaf0"
+    },
+    {
+      "path": "target/candidate/release/sesm-desktop.exe",
+      "name": "sesm-desktop.exe",
+      "bytes": 19494400,
+      "sha256": "5f07440439a7ecc6115cf0412535bec523faf5824b3792be1c380f3d4ec8f173"
+    }
+  ]
+}

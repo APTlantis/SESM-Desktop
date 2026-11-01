@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "status": "self-signed-development",
+  "publisher": "CN=Administrator",
+  "thumbprint": "CFFBE181857FFCC940B18B7F191399B5BBAE4BC5",
+  "artifact": "target/release/bundle/msix/SESM-Desktop-0.1.0-development-msix-20261031-200308.msix",
+  "authenticode_status": "Valid",
+  "trust_installed_by_script": false
+}

@@ -1,0 +1,30 @@
+# Pending native stages intentionally block DRS release readiness.
+version = "0.1.0"
+artifact_sha256 = "DB73164636141E8A222CB5336951B3A275D81BFE125FE0D1A8522FD0742AFAF0"
+
+[stages.build-package]
+status = "pass"
+date = "2026-10-31"
+log = "evidence/validation.md"
+
+[stages.install-upgrade]
+status = "pending"
+date = "2026-10-31"
+log = "evidence/validation.md"
+
+[stages.runtime]
+status = "pending"
+date = "2026-10-31"
+log = "evidence/validation.md"
+
+[stages.migration]
+status = "not-applicable"
+date = "2026-10-31"
+log = "evidence/validation.md"
+reason = "First release; no earlier supported application storage version to migrate."
+reviewer = "Codex implementation review"
+
+[stages.integrity]
+status = "pass"
+date = "2026-10-31"
+log = "evidence/artifacts.json"

@@ -1,0 +1,152 @@
+.apt-site {
+  color-scheme: dark;
+  --apt-background: #020B14;
+  --apt-foreground: #FEFEFD;
+  --apt-panel: #0B131A;
+  --apt-elevated: #182027;
+  --apt-muted: #2F9490;
+  --apt-primary: #F7D34D;
+  --apt-secondary: #698D9D;
+  --apt-selection: #382D00;
+  --apt-selection-text: #FEFEFD;
+  --apt-border: #188581;
+  --apt-warning: #A68530;
+  --apt-error: #B07D30;
+  --apt-success: #FEF26E;
+  --apt-info: #698D9D;
+  --apt-keyword: #D69D21;
+  --apt-string: #698D9D;
+  --apt-number: #FDEDBF;
+  --apt-function: #2F9490;
+  --apt-type: #F7C646;
+  --apt-operator: #B07D30;
+  --apt-constant: #FEF26E;
+  --apt-comment: #2F9490;
+  --apt-nav-bg: #0D1217;
+  --apt-nav-text: #FEFEFD;
+  --apt-nav-muted: #228B87;
+  --apt-nav-border: #228B87;
+  --apt-hero-bg: #161B20;
+  --apt-hero-text: #FEFEFD;
+  --apt-hero-muted: #2B918D;
+  --apt-hero-border: #228B87;
+  --apt-card-bg: #1A2025;
+  --apt-card-text: #FEFEFD;
+  --apt-card-muted: #2F9490;
+  --apt-card-border: #228B87;
+  --apt-input-bg: #090E12;
+  --apt-input-text: #FEFEFD;
+  --apt-input-muted: #1D8884;
+  --apt-input-border: #228B87;
+  --apt-dialog-bg: #242A2E;
+  --apt-dialog-text: #FEFEFD;
+  --apt-dialog-muted: #3B9E99;
+  --apt-dialog-border: #228B87;
+  --apt-table-bg: #11171B;
+  --apt-table-text: #FEFEFD;
+  --apt-table-muted: #278E8A;
+  --apt-table-border: #228B87;
+  --apt-footer-bg: #060A0E;
+  --apt-footer-text: #FEFEFD;
+  --apt-footer-muted: #1D8884;
+  --apt-footer-border: #228B87;
+  --apt-primary-rest-bg: #2F2500;
+  --apt-primary-rest-text: #FEFEFD;
+  --apt-primary-rest-border: #F7D34D;
+  --apt-primary-hover-bg: #3E3200;
+  --apt-primary-hover-text: #FEFEFD;
+  --apt-primary-hover-border: #F7D34D;
+  --apt-primary-pressed-bg: #221A00;
+  --apt-primary-pressed-text: #FEFEFD;
+  --apt-primary-pressed-border: #F7D34D;
+  --apt-primary-disabled-bg: #1C1500;
+  --apt-primary-disabled-text: #FEFEFD;
+  --apt-primary-disabled-border: #F7D34D;
+  --apt-secondary-rest-bg: #102A34;
+  --apt-secondary-rest-text: #FEFEFD;
+  --apt-secondary-rest-border: #608494;
+  --apt-secondary-hover-bg: #1D3742;
+  --apt-secondary-hover-text: #FEFEFD;
+  --apt-secondary-hover-border: #608494;
+  --apt-secondary-pressed-bg: #041E28;
+  --apt-secondary-pressed-text: #FEFEFD;
+  --apt-secondary-pressed-border: #608494;
+  --apt-secondary-disabled-bg: #011923;
+  --apt-secondary-disabled-text: #FEFEFD;
+  --apt-secondary-disabled-border: #608494;
+  --apt-success-bg: #191700;
+  --apt-success-text: #FEF26E;
+  --apt-success-border: #FEF26E;
+  --apt-warning-bg: #1E1400;
+  --apt-warning-text: #A68530;
+  --apt-warning-border: #A68530;
+  --apt-error-bg: #211300;
+  --apt-error-text: #AA7729;
+  --apt-error-border: #A77425;
+  --apt-info-bg: #0D181D;
+  --apt-info-text: #638797;
+  --apt-info-border: #608494;
+  --apt-link-hover: #F7D34D;
+  --apt-link-visited: #7EA3B3;
+  --apt-focus: #F7D34D;
+}
+
+.apt-site{background:var(--apt-background);color:var(--apt-foreground);font:16px/1.65 system-ui,sans-serif;margin:0;overflow-wrap:anywhere}
+.apt-site *{box-sizing:border-box}.apt-site .apt-wrap{max-width:1160px;margin:auto;padding:clamp(18px,4vw,48px)}
+.apt-site h1,.apt-site h2,.apt-site h3{line-height:1.15;letter-spacing:-.025em}.apt-site h1{font-size:clamp(2.3rem,6vw,4.6rem);max-width:15ch;margin:.3em 0}
+.apt-site .apt-eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--apt-secondary)}
+.apt-site a{color:var(--apt-primary);text-underline-offset:4px}.apt-site a:visited{color:var(--apt-link-visited)}.apt-site a:hover{color:var(--apt-link-hover)}
+.apt-site :focus-visible{outline:3px solid var(--apt-focus);outline-offset:4px}
+.apt-site ::selection{background:var(--apt-selection);color:var(--apt-selection-text)}
+.apt-site .apt-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.apt-site .apt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:22px}
+.apt-site .apt-muted{color:var(--apt-muted)}.apt-site .apt-metric{font-size:2.4rem;font-weight:650;display:block}
+.apt-site .apt-panel{background:var(--apt-panel);padding:24px}.apt-site .apt-elevated{background:var(--apt-elevated);padding:24px}
+.apt-site .apt-button{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:650;padding:11px 20px;border:1px solid;border-radius:8px;cursor:pointer;text-decoration:none}
+.apt-site .apt-button:disabled{cursor:not-allowed}.apt-site input,.apt-site textarea,.apt-site select{font:inherit;border:1px solid var(--apt-input-border);border-radius:6px;padding:10px 12px;width:100%;background:var(--apt-input-bg);color:var(--apt-input-text)}
+.apt-site input::placeholder,.apt-site textarea::placeholder{color:var(--apt-input-muted)}.apt-site label{display:block;margin:16px 0 6px}.apt-site input[type=checkbox]{width:auto;accent-color:var(--apt-primary)}
+.apt-site .apt-scroll{overflow:auto}.apt-site table{border-collapse:collapse;width:100%;min-width:500px}.apt-site td,.apt-site th{text-align:left;border-bottom:1px solid var(--apt-table-border);padding:12px}
+.apt-site details{border:1px solid var(--apt-border);border-radius:8px;padding:16px;margin:14px 0}.apt-site summary{cursor:pointer;font-weight:650}
+.apt-site pre{background:var(--apt-panel);color:var(--apt-foreground);padding:20px;overflow:auto}.apt-site code{font-family:ui-monospace,monospace}
+.apt-site dialog{max-width:min(580px,90vw);border-radius:12px;padding:28px}.apt-site dialog::backdrop{background:var(--apt-background);opacity:.8}
+.apt-site .apt-message{padding:16px 20px;border-left:4px solid;margin:14px 0;border-radius:4px}
+.apt-site .apt-card{padding:24px;border:1px solid;border-radius:12px}.apt-site .apt-nav{border-bottom:1px solid;padding:20px clamp(18px,4vw,48px)}
+.apt-site .apt-footer{padding:32px clamp(18px,4vw,48px);border-top:1px solid}.apt-site .apt-hero{border-bottom:1px solid}
+.apt-site .apt-nav{background:var(--apt-nav-bg);color:var(--apt-nav-text);border-color:var(--apt-nav-border)}
+.apt-site .apt-nav .apt-muted{color:var(--apt-nav-muted)}
+.apt-site .apt-hero{background:var(--apt-hero-bg);color:var(--apt-hero-text);border-color:var(--apt-hero-border)}
+.apt-site .apt-hero .apt-muted{color:var(--apt-hero-muted)}
+.apt-site .apt-card{background:var(--apt-card-bg);color:var(--apt-card-text);border-color:var(--apt-card-border)}
+.apt-site .apt-card .apt-muted{color:var(--apt-card-muted)}
+.apt-site .apt-input{background:var(--apt-input-bg);color:var(--apt-input-text);border-color:var(--apt-input-border)}
+.apt-site .apt-input .apt-muted{color:var(--apt-input-muted)}
+.apt-site .apt-dialog{background:var(--apt-dialog-bg);color:var(--apt-dialog-text);border-color:var(--apt-dialog-border)}
+.apt-site .apt-dialog .apt-muted{color:var(--apt-dialog-muted)}
+.apt-site .apt-table{background:var(--apt-table-bg);color:var(--apt-table-text);border-color:var(--apt-table-border)}
+.apt-site .apt-table .apt-muted{color:var(--apt-table-muted)}
+.apt-site .apt-footer{background:var(--apt-footer-bg);color:var(--apt-footer-text);border-color:var(--apt-footer-border)}
+.apt-site .apt-footer .apt-muted{color:var(--apt-footer-muted)}
+.apt-site .apt-button.apt-primary,.apt-site .apt-button.apt-primary[data-state="rest"]{background:var(--apt-primary-rest-bg);color:var(--apt-primary-rest-text);border-color:var(--apt-primary-rest-border)}
+.apt-site .apt-button.apt-primary:hover:not(:disabled),.apt-site .apt-button.apt-primary[data-state="hover"]{background:var(--apt-primary-hover-bg);color:var(--apt-primary-hover-text);border-color:var(--apt-primary-hover-border)}
+.apt-site .apt-button.apt-primary:active:not(:disabled),.apt-site .apt-button.apt-primary[data-state="pressed"]{background:var(--apt-primary-pressed-bg);color:var(--apt-primary-pressed-text);border-color:var(--apt-primary-pressed-border)}
+.apt-site .apt-button.apt-primary:disabled,.apt-site .apt-button.apt-primary[data-state="disabled"]{background:var(--apt-primary-disabled-bg);color:var(--apt-primary-disabled-text);border-color:var(--apt-primary-disabled-border)}
+.apt-site .apt-button.apt-secondary,.apt-site .apt-button.apt-secondary[data-state="rest"]{background:var(--apt-secondary-rest-bg);color:var(--apt-secondary-rest-text);border-color:var(--apt-secondary-rest-border)}
+.apt-site .apt-button.apt-secondary:hover:not(:disabled),.apt-site .apt-button.apt-secondary[data-state="hover"]{background:var(--apt-secondary-hover-bg);color:var(--apt-secondary-hover-text);border-color:var(--apt-secondary-hover-border)}
+.apt-site .apt-button.apt-secondary:active:not(:disabled),.apt-site .apt-button.apt-secondary[data-state="pressed"]{background:var(--apt-secondary-pressed-bg);color:var(--apt-secondary-pressed-text);border-color:var(--apt-secondary-pressed-border)}
+.apt-site .apt-button.apt-secondary:disabled,.apt-site .apt-button.apt-secondary[data-state="disabled"]{background:var(--apt-secondary-disabled-bg);color:var(--apt-secondary-disabled-text);border-color:var(--apt-secondary-disabled-border)}
+.apt-site .apt-message.apt-success{background:var(--apt-success-bg);color:var(--apt-success-text);border-color:var(--apt-success-border)}
+.apt-site .apt-text-success{color:var(--apt-success)}
+.apt-site .apt-message.apt-warning{background:var(--apt-warning-bg);color:var(--apt-warning-text);border-color:var(--apt-warning-border)}
+.apt-site .apt-text-warning{color:var(--apt-warning)}
+.apt-site .apt-message.apt-error{background:var(--apt-error-bg);color:var(--apt-error-text);border-color:var(--apt-error-border)}
+.apt-site .apt-text-error{color:var(--apt-error)}
+.apt-site .apt-message.apt-info{background:var(--apt-info-bg);color:var(--apt-info-text);border-color:var(--apt-info-border)}
+.apt-site .apt-text-info{color:var(--apt-info)}
+.apt-site .apt-code-keyword{color:var(--apt-keyword)}
+.apt-site .apt-code-string{color:var(--apt-string)}
+.apt-site .apt-code-number{color:var(--apt-number)}
+.apt-site .apt-code-function{color:var(--apt-function)}
+.apt-site .apt-code-type{color:var(--apt-type)}
+.apt-site .apt-code-operator{color:var(--apt-operator)}
+.apt-site .apt-code-constant{color:var(--apt-constant)}
+.apt-site .apt-code-comment{color:var(--apt-comment)}

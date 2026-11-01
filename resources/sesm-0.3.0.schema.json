@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aptlantis.net/schemas/svg_asset.schema.json",
+  "title": "APTlantis SVG Asset Metadata",
+  "type": "object",
+
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "asset",
+      "description": "Top-level discriminator for generic assets."
+    },
+
+    "asset_type": {
+      "type": "string",
+      "const": "svg",
+      "description": "Asset subtype identifier."
+    },
+
+    "slug": {
+      "type": "string",
+      "description": "Stable, URL-safe identifier (e.g. 'nodejs', 'aptlantis-logo')."
+    },
+
+    "source": {
+      "type": "object",
+      "description": "Original SVG source material.",
+      "properties": {
+        "format": {
+          "type": "string",
+          "const": "svg"
+        },
+
+        "content": {
+          "type": "string",
+          "description": "Raw SVG XML string as imported from MongoDB."
+        },
+
+        "content_hash": {
+          "type": "string",
+          "description": "Optional hash (sha256/blake3) of the SVG content."
+        }
+      },
+      "required": ["format", "content"]
+    },
+
+    "sesm": {
+      "type": "object",
+      "description": "SVG Embedded Semantic Metadata (SESM) block conforming to the 0.3.x candidate profile, with compatibility for 0.2.0 blocks.",
+      "properties": {
+        "sesm_version": {
+          "type": "string",
+          "description": "The SESM specification version used by the block.",
+          "enum": ["0.2.0", "0.3.0"]
+        },
+        "asset": {
+          "type": "object",
+          "description": "Describes what the SVG represents.",
+          "properties": {
+            "id": { "type": "string", "description": "Unique stable identifier for the asset." },
+            "role": {
+              "type": "string",
+              "description": "Functional role of the asset.",
+              "enum": [
+                "logo",
+                "icon",
+                "theme-board",
+                "dataset-card",
+                "dataset-header",
+                "pipeline-panel",
+                "stats-panel",
+                "navigation-card",
+                "graph-node",
+                "graph-panel",
+                "status-badge",
+                "download-card",
+                "schema-card",
+                "archive-summary",
+                "landing-hero",
+                "page-header",
+                "decorative",
+                "unknown"
+              ]
+            },
+            "title": { "type": "string", "description": "Human-readable title of the asset." },
+            "description": { "type": "string", "description": "Short description of the asset." },
+            "ecosystem": { "type": "string", "description": "The technology or theme ecosystem (e.g. 'rust', 'c')." },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "List of tags associated with the asset."
+            }
+          },
+          "required": ["id", "role"]
+        },
+        "artifact": {
+          "type": "object",
+          "description": "Describes the SVG as a generated artifact.",
+          "properties": {
+            "kind": { "type": "string" },
+            "artifact_id": { "type": "string" },
+            "source_type": { "type": "string" },
+            "source_id": { "type": "string" },
+            "source_path": { "type": "string" },
+            "template_id": { "type": "string" },
+            "template_path": { "type": "string" },
+            "output_path": { "type": "string" },
+            "build_profile": { "type": "string" }
+          }
+        },
+        "theme": {
+          "type": "object",
+          "description": "Visual theme and semantic color mapping used by the SVG.",
+          "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "version": { "type": "string" },
+            "palette_contract": { "type": "string" },
+            "mode": { "type": "string", "enum": ["dark", "light"] },
+            "accent": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$" },
+                "semantic_role": { "type": "string" },
+                "semantic_family": { "type": "string" },
+                "psychological_intent": { "type": "string" }
+              }
+            },
+            "state": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": [
+                    "idle",
+                    "active",
+                    "running",
+                    "featured",
+                    "complete",
+                    "verified",
+                    "warning",
+                    "error",
+                    "archived",
+                    "experimental",
+                    "deprecated"
+                  ]
+                },
+                "intensity": { "type": "integer" },
+                "glow": { "type": "string" },
+                "priority": { "type": "string" }
+              }
+            },
+            "tokens": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "semantic_families": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "ui": {
+          "type": "object",
+          "description": "Hints for UI placement and layout.",
+          "properties": {
+            "component_type": { "type": "string" },
+            "preferred_layout": { "type": "string" },
+            "preferred_regions": { "type": "array", "items": { "type": "string" } },
+            "avoid_regions": { "type": "array", "items": { "type": "string" } },
+            "responsive_behavior": { "type": "string" },
+            "interaction": {
+              "type": "object",
+              "properties": {
+                "click_target": { "type": "string" },
+                "hover_behavior": { "type": "string" },
+                "supports_focus": { "type": "boolean" }
+              }
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "width": { "type": "number" },
+                "height": { "type": "number" },
+                "aspect_ratio": { "type": "string" }
+              }
+            }
+          }
+        },
+        "crawl": {
+          "type": "object",
+          "description": "Archival and crawler hints.",
+          "properties": {
+            "indexable": { "type": "boolean" },
+            "archive": { "type": "boolean" },
+            "notes": { "type": "string" },
+            "discover_paths": { "type": "array", "items": { "type": "string" } },
+            "canonical_group": { "type": "string" }
+          }
+        },
+        "llm": {
+          "type": "object",
+          "description": "Context and guidance for language models.",
+          "properties": {
+            "summary": { "type": "string" },
+            "intended_interpretation": { "type": "string" },
+            "interpretation_hints": { "type": "array", "items": { "type": "string" } },
+            "card_hints": { "type": "object" },
+            "avoid_interpretations": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "links": {
+          "type": "object",
+          "description": "Links to related resources.",
+          "properties": {
+            "canonical_html": { "type": "string", "format": "uri" },
+            "jsonld": { "type": "string", "format": "uri" },
+            "manifest": { "type": "string", "format": "uri" },
+            "api": { "type": "string", "format": "uri" },
+            "docs": { "type": "string", "format": "uri" },
+            "download": { "type": "string", "format": "uri" },
+            "torrent": { "type": "string", "format": "uri" },
+            "source_repo": { "type": "string", "format": "uri" },
+            "homepage": { "type": "string", "format": "uri" },
+            "license": { "type": "string", "format": "uri" },
+            "snapshot_hashes": { "type": "string" }
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "description": "Provenance of the SVG generation.",
+          "properties": {
+            "generated": { "type": "boolean" },
+            "generator": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "version": { "type": "string" },
+                "language": { "type": "string" }
+              }
+            },
+            "generated_at": { "type": "string", "format": "date-time" },
+            "input_records": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": { "type": "string" },
+                  "record_id": { "type": "string" }
+                }
+              }
+            },
+            "reproducible": { "type": "boolean" },
+            "build_id": { "type": "string" },
+            "git_commit": { "type": "string" },
+            "host": { "type": "string" }
+          }
+        },
+        "integrity": {
+          "type": "object",
+          "description": "Integrity metadata.",
+          "properties": {
+            "content_hash": {
+              "type": "object",
+              "properties": {
+                "algorithm": { "type": "string" },
+                "value": { "type": "string" }
+              }
+            },
+            "manifest": { "type": "string" },
+            "signed_manifest": { "type": "string" },
+            "signature": { "type": "string" },
+            "verification_notes": { "type": "string" }
+          }
+        },
+        "extra": {
+          "type": "object",
+          "description": "Platform-specific extensions.",
+          "additionalProperties": true
+        }
+      },
+      "required": ["sesm_version"]
+    },
+
+    "dimensions": {
+      "type": "object",
+      "description": "Parsed SVG dimensions if available.",
+      "properties": {
+        "width": { "type": "string", "description": "e.g. '512px' or '100%'" },
+        "height": { "type": "string", "description": "e.g. '512px' or '100%'" },
+        "viewBox": { "type": "string", "description": "SVG viewBox attribute." }
+      }
+    },
+
+    "roles": {
+      "type": "array",
+      "description": "Functional roles of this SVG within APTlantis.",
+      "items": {
+        "type": "string",
+        "enum": ["logo", "icon", "branding", "diagram", "illustration", "ui", "other"]
+      }
+    },
+
+    "debug": {
+      "type": "object",
+      "description": "Import and pipeline provenance.",
+      "properties": {
+        "imported_by": {
+          "type": "string",
+          "description": "Importer or pipeline identifier (e.g. 'aard-prototype')."
+        },
+        "imported_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of import."
+        },
+        "source_collection": {
+          "type": "string",
+          "description": "MongoDB collection name if applicable."
+        },
+        "source_id": {
+          "type": "string",
+          "description": "Original MongoDB ObjectId or external identifier."
+        }
+      }
+    },
+
+    "ai": {
+      "type": "object",
+      "description": "Optional AI-derived annotations.",
+      "properties": {
+        "summary": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+
+  "required": ["type", "asset_type", "slug", "source"]
+}

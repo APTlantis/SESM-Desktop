@@ -1,0 +1,103 @@
+[project]
+id = "sesm-desktop"
+title = "SESM Desktop"
+class = "desktop-application"
+type = "ui"
+stage = "active"
+description = "Independent offline SESM SVG metadata editor with reviewed copy exports."
+wgs_lifecycle = "active"
+version = "0.1.0"
+target_version = "0.1.0"
+release_status = "implementation-candidate"
+theme = "Portable self-describing SVG assets"
+
+[governance]
+proposal_standard = "PPS"
+delivery_standard = "DRS"
+specialized_standard = "SESM"
+proposal_readiness = "ready"
+
+[technical]
+engine = "Rust"
+desktop_framework = "Tauri"
+frontend = "React and TypeScript"
+visual_identity = "Aptlantis-Factor"
+platforms = ["windows", "linux", "macos"]
+local_first = true
+cloud_required = false
+
+[relationships]
+aptlantis_integration = "optional-deferred"
+chromatic_atlas_dependency = false
+
+[documents]
+proposal = "Project-Proposal.md"
+scope = "Scope-Boundary.md"
+success = "Success-Criteria.md"
+risks = "Risk-Assessment.md"
+roadmap = "Roadmap.md"
+readme = "README.md"
+project_readme = "Project-README.md"
+architecture = "docs/ARCHITECTURE.md"
+recovery = "docs/RECOVERY.md"
+trust = "docs/TRUST.md"
+release = "docs/releases/0.1.0.md"
+validation = "evidence/validation.md"
+
+[agent]
+read_first = ["README.md", "Project-Proposal.md", "Scope-Boundary.md", "Success-Criteria.md"]
+notes = "Assess v0.1 against declared completion criteria; do not promote optional integration or future features into release blockers."
+
+[release_evidence]
+cross_platform_acceptance = "pending"
+publication = "not-requested"
+parent_registration = "docs/PARENT-REGISTRATION.md"
+
+[metadata]
+created = "2026-10-31"
+last_updated = "2026-10-31"
+language_primary = "Rust"
+languages_used = ["Rust", "TypeScript", "CSS"]
+license = "MIT"
+
+[runtime]
+platform = "desktop"
+environment = "Windows x64 candidate; Linux and macOS native acceptance pending"
+services = []
+storage = ["local-filesystem"]
+
+[distribution]
+packaged = true
+package_formats = ["msix"]
+channel = "msix-sideload-dev"
+signing_authority = "self-signed-development"
+offline_capable = true
+
+[release]
+status = "candidate"
+version = "0.1.0"
+name = "SESM Desktop v0.1.0 — Portable, self-describing SVG assets"
+date = "2026-10-31"
+
+[release.installer]
+path = "target/release/bundle/msix/SESM-Desktop-0.1.0-development-msix-20261031-200308.msix"
+runtime = "win-x64"
+package_version = "0.1.0.0"
+size_bytes = 6771673
+sha256 = "DB73164636141E8A222CB5336951B3A275D81BFE125FE0D1A8522FD0742AFAF0"
+signing = "self-signed-development"
+
+[release.verified]
+stage_evidence = "docs/Release-Stage-Evidence.toml"
+date = "2026-10-31"
+tests = "18 Rust integration tests; 4 frontend unit tests; 4 browser workflow checks"
+installer_build = "Windows SDK MakeAppx development package; exact hash bound after final packaging"
+install_check = "pending: no installation acceptance recorded for the signed candidate"
+data_safety = "source protection and cancellation verified in engine tests; uninstall acceptance pending"
+upgrade_check = "not applicable to first release"
+
+[documentation]
+readme = "README.md"
+release_notes = "docs/releases/0.1.0.md"
+release_checklist = "Validation-Checklist.md"
+trust_model = "docs/TRUST.md"

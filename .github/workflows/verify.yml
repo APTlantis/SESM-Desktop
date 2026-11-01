@@ -1,0 +1,41 @@
+name: Native build and package candidates
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-24.04, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Linux desktop prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev librsvg2-dev libayatana-appindicator3-dev patchelf
+      - run: npm ci
+      - run: npm run verify:sources
+      - run: npm test
+      - run: cargo test -p sesm-engine --locked
+      - run: npm run build
+      - run: cargo check -p sesm-desktop --locked
+      - name: Windows development candidate
+        if: runner.os == 'Windows'
+        run: ./scripts/package-windows.ps1
+      - name: Linux AppImage candidate
+        if: runner.os == 'Linux'
+        run: npm run tauri build -- --bundles appimage
+      - name: macOS app and DMG candidates
+        if: runner.os == 'macOS'
+        run: npm run tauri build -- --bundles app,dmg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SESM-Desktop-${{ runner.os }}-candidate
+          path: |
+            target/release/bundle/
+            evidence/local/artifact-hashes.json
+            docs/
